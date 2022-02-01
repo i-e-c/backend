@@ -3,7 +3,7 @@ const User = require("../models/User");
 const Article = require("../models/Article");
 
 //CREATE POST
-router.post("/", async (req, res) => {
+router.post("/newarticle", async (req, res) => {
   const newArticle = new Article(req.body);
   try {
     const savedArticle = await newArticle.save();
