@@ -5,10 +5,11 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/authentication");
 const userRoute = require("./routes/users");
 const articleRoute = require("./routes/articles");
-
-
+const cors = require("cors")
+const PORT = process.env.PORT || 5000
 dotenv.config();
 const app = express();
+app.use(cors())
 app.use(express.json());
 
 mongoose.connect(process.env.db_url, {
@@ -24,6 +25,6 @@ app.use("/route/auth", authRoute);
 app.use("/route/user", userRoute);
 app.use("/route/article", articleRoute);
 
-app.listen("5000", () => {
+app.listen(PORT, () => {
     console.log("It is working");
 })
