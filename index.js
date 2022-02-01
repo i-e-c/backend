@@ -26,5 +26,6 @@ app.use("/route/user", userRoute);
 app.use("/route/article", articleRoute);
 
 app.listen(PORT, () => {
+    
     console.log("It is working");
 })
